@@ -1,10 +1,10 @@
-import { ChatOpenAI } from "langchain/chat_models/openai";
-import { LLMChain } from "langchain/chains";
+import { ChatOpenAI } from " langchain/chat_models/openai";
+import { LLMChain } from " langchain/chains";
 import {
   ChatPromptTemplate,
   SystemMessagePromptTemplate,
   HumanMessagePromptTemplate,
-} from "langchain/prompts";
+} from " langchain/prompts";
 import "dotenv/config";
 
 const template =

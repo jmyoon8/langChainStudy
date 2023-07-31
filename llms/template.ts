@@ -1,4 +1,4 @@
-import { PromptTemplate } from "langchain/prompts";
+import { PromptTemplate } from " langchain/prompts";
 
 const template = "Who is {name} boyfriend?";
 const prompt = new PromptTemplate({

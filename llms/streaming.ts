@@ -1,4 +1,4 @@
-import { OpenAI } from "langchain/llms/openai";
+import { OpenAI } from " langchain/llms/openai";
 import "dotenv/config";
 
 // To enable streaming, we pass in `streaming: true` to the LLM constructor.

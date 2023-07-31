@@ -1,7 +1,7 @@
-import { OpenAI } from "langchain/llms/openai";
-import { initializeAgentExecutorWithOptions } from "langchain/agents";
-import { SerpAPI } from "langchain/tools";
-import { Calculator } from "langchain/tools/calculator";
+import { OpenAI } from " langchain/llms/openai";
+import { initializeAgentExecutorWithOptions } from " langchain/agents";
+import { SerpAPI } from " langchain/tools";
+import { Calculator } from " langchain/tools/calculator";
 import "dotenv/config";
 import readline from "readline";
 
