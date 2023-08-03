@@ -1,11 +1,11 @@
 import { OpenAI } from "langchain/llms/openai";
-
+import "dotenv/config";
 // To enable streaming, we pass in `streaming: true` to the LLM constructor.
 // Additionally, we pass in a handler for the `handleLLMNewToken` event.
 // 이거안됨..
 const model = new OpenAI({
   maxTokens: 25,
-  streaming: true,
+  // streaming: true,
 });
 
 const streaming = await model.call("Tell me a joke.", {

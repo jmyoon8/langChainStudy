@@ -1,7 +1,5 @@
-import { OpenAI } from " langchain/llms/openai";
-import { PromptTemplate } from " langchain/prompts";
-import { LLMChain } from " langchain/chains";
 import "dotenv/config";
+import { LLMChain, OpenAI, PromptTemplate } from "langchain/index";
 
 const model = new OpenAI({ temperature: 0 });
 const template = "{name}'s boyfriend? is harry styles?";
