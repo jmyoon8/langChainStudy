@@ -16,6 +16,7 @@
     "outDir": "build",
     // "noEmit": true,
     "esModuleInterop": true,
+    "moduleResolution": "Node",
     "module": "esnext",
     "isolatedModules": true,
     "sourceMap": true,
