@@ -10,8 +10,8 @@ const tokenTextSplitter = async () => {
     chunkOverlap: 0,
   });
 
-  console.log("123123");
   const output = await splitter.createDocuments([text]);
   console.log(output);
 };
+
 export { tokenTextSplitter };
