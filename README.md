@@ -1,7 +1,14 @@
 # langChainStudy
 
 랭체인 공부
-아래 라이브러리를 인스톨한다음 실행
+
+```
+npm install
+```
+
+한후
+
+아래 라이브러리를 따로 인스톨한다음 실행
 
 ```
 npm i tsx --global
@@ -16,3 +23,5 @@ https://js.langchain.com/docs/get_started/introduction
 ```
 npm run basic
 ```
+
+랭체인 홈페이지에 없는 코드들은 추가해서 사용해주세요!
