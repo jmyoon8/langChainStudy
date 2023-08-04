@@ -1,5 +1,5 @@
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-// import "dotenv/config";
+
 /* Create instance */
 const embeddings = new OpenAIEmbeddings();
 
