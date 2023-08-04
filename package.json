@@ -9,17 +9,20 @@
   "scripts": {
     "llms": "nodemon --watch './llms/*' --exec 'ts-node' llms/$name ",
     "chatting": "nodemon --watch './chatting/*' --exec 'ts-node' chatting/$name ",
-    "basic": "nodemon --watch index.ts --exec \"npm run start\"",
-    "start": "tsx -r dotenv/config index.ts"
+    "basic": "nodemon --watch ./Basic/**/*.ts --exec \"npm run start\"",
+    "start": "tsx watch index.ts -r dotenv/config "
   },
   "dependencies": {
     "@pinecone-database/pinecone": "^0.0.9",
+    "cheerio": "^1.0.0-rc.12",
     "d3-dsv": "^2.0.0",
     "dotenv": "^16.3.1",
     "hnswlib-node": "^1.4.2",
+    "html-to-text": "^9.0.5",
     "langchain": "^0.0.106",
     "nodemon": "^3.0.1",
     "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^3.9.179",
     "rimraf": "^4.1.2",
     "serpapi": "^1.1.1",
     "ts-node": "^10.9.1",
@@ -32,7 +35,7 @@
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
     "tsconfig-paths": "^3.14.2",
-    "tsx": "^3.12.3",
+    "tsx": "^3.12.7",
     "typescript": "^4.9.5"
   }
 }

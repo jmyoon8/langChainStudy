@@ -33,17 +33,27 @@ import {
   StructuredOutputParserWithZod,
 } from "Basic/1.Model_IO/3.outPutParsers/6.StructuredOutputParser";
 import { getExampleDocs } from "Basic/2.DataConnection/1.DocumentLoaders/1.DocumentLoader";
-import { createDoc } from "Basic/2.DataConnection/2.How-To/1.CreatingDocuments";
+
+import { noSplitPdfLoaderHandler } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/6.PDF";
+import { createDoc } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/1.CreatingDocuments";
 import {
   getExampleCsvHandler,
   getExampleSlngleColumnCsv,
-} from "Basic/2.DataConnection/2.How-To/2.Csv";
-import { fileDerectoryData } from "Basic/2.DataConnection/2.How-To/4.FileDirectory";
+} from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/2.Csv";
+import { fileDerectoryData } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/4.FileDirectory";
 import {
   jsonLoaderHandler,
   jsonPointLoaderHandler,
-} from "Basic/2.DataConnection/2.How-To/5.JSON";
-import { pdfLoaderHandler } from "Basic/2.DataConnection/2.How-To/6.PDF";
+} from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/5.JSON";
+import { textSpliterOutput } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/1.SplitByCharater";
+import { codeAndMarkupHandler } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/2.SplitCodeAndMarkup";
+import { contextChunkHeadersHandler } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/3.ContextChunkheaders";
+import {
+  recursiveTextSplitHandler,
+  recursiveTextSplitWithSplitDocumentHandler,
+} from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/4.RecursivelySplitByCharacter";
+import { tokenTextSplitter } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/5.TokenTextSplitter";
+// import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
 // createAPromptTemplateHandler();
@@ -84,5 +94,15 @@ import { pdfLoaderHandler } from "Basic/2.DataConnection/2.How-To/6.PDF";
 // console.log(fileDerectoryData);
 // jsonLoaderHandler();
 // jsonPointLoaderHandler();
-pdfLoaderHandler();
-export {};
+// noSplitPdfLoaderHandler;
+// pdfJsHandler();
+
+// ***이건안됨***
+// htmlToText();
+// ***********
+// console.log(textSpliterOutput);
+// codeAndMarkupHandler();
+// contextChunkHeadersHandler();
+// recursiveTextSplitHandler();
+// recursiveTextSplitWithSplitDocumentHandler();
+tokenTextSplitter();
