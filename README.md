@@ -6,7 +6,7 @@
 최상위 root에
 .env 파일을 생성한다음
 아래 텍스트를 붙여녛어주시고 YOUR_KEY에 본인의 key를 넣어주세요!
-OPENAI_API_KEY=YOUR_KEY
+OPENAI_API_KEY=YOUR_KEY  
 SERPAPI_API_KEY=YOUR_KEY
 
 그런다음!
