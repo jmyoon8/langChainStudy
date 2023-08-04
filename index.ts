@@ -43,6 +43,7 @@ import {
   jsonLoaderHandler,
   jsonPointLoaderHandler,
 } from "Basic/2.DataConnection/2.How-To/5.JSON";
+import { pdfLoaderHandler } from "Basic/2.DataConnection/2.How-To/6.PDF";
 
 // prompt templates
 // createAPromptTemplateHandler();
@@ -82,5 +83,6 @@ import {
 // getExampleSlngleColumnCsv();
 // console.log(fileDerectoryData);
 // jsonLoaderHandler();
-jsonPointLoaderHandler();
+// jsonPointLoaderHandler();
+pdfLoaderHandler();
 export {};
