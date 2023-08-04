@@ -28,6 +28,21 @@ import { zodDataWithLLMChainsHandler } from "Basic/1.Model_IO/3.outPutParsers/1.
 import { getCombingOutPutParseData } from "Basic/1.Model_IO/3.outPutParsers/2.CombiningOutputParsers";
 import { getListParser } from "Basic/1.Model_IO/3.outPutParsers/3.ListParser";
 import { getCutomListParser } from "Basic/1.Model_IO/3.outPutParsers/4.CustomListParser";
+import {
+  StructuredOutputParserWithJson,
+  StructuredOutputParserWithZod,
+} from "Basic/1.Model_IO/3.outPutParsers/6.StructuredOutputParser";
+import { getExampleDocs } from "Basic/2.DataConnection/1.DocumentLoaders/1.DocumentLoader";
+import { createDoc } from "Basic/2.DataConnection/2.How-To/1.CreatingDocuments";
+import {
+  getExampleCsvHandler,
+  getExampleSlngleColumnCsv,
+} from "Basic/2.DataConnection/2.How-To/2.Csv";
+import { fileDerectoryData } from "Basic/2.DataConnection/2.How-To/4.FileDirectory";
+import {
+  jsonLoaderHandler,
+  jsonPointLoaderHandler,
+} from "Basic/2.DataConnection/2.How-To/5.JSON";
 
 // prompt templates
 // createAPromptTemplateHandler();
@@ -58,5 +73,14 @@ import { getCutomListParser } from "Basic/1.Model_IO/3.outPutParsers/4.CustomLis
 // zodDataWithLLMChainsHandler();
 // console.log(getCombingOutPutParseData);
 // getListParser();
-console.log(getCutomListParser);
+// console.log(getCutomListParser);
+// StructuredOutputParserWithJson();
+// StructuredOutputParserWithZod();
+// console.log(getExampleDocs);
+// console.log(createDoc);
+// getExampleCsvHandler();
+// getExampleSlngleColumnCsv();
+// console.log(fileDerectoryData);
+// jsonLoaderHandler();
+jsonPointLoaderHandler();
 export {};
