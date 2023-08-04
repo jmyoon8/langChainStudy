@@ -53,6 +53,10 @@ import {
   recursiveTextSplitWithSplitDocumentHandler,
 } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/4.RecursivelySplitByCharacter";
 import { tokenTextSplitter } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/5.TokenTextSplitter";
+import {
+  documentEmbeddings,
+  getEmbeddings,
+} from "Basic/2.DataConnection/3.TextEmbeddingModels/1.TextEmbeddingModels";
 // import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
@@ -106,3 +110,7 @@ import { tokenTextSplitter } from "Basic/2.DataConnection/2.DocumentTransformers
 // recursiveTextSplitHandler();
 // recursiveTextSplitWithSplitDocumentHandler();
 // tokenTextSplitter();
+console.log("123123");
+console.log("123123");
+console.log(getEmbeddings, documentEmbeddings);
+// watch --clear-screen=false

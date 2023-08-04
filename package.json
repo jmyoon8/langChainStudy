@@ -10,7 +10,7 @@
     "llms": "nodemon --watch './llms/*' --exec 'ts-node' llms/$name ",
     "chatting": "nodemon --watch './chatting/*' --exec 'ts-node' chatting/$name ",
     "basic": "nodemon --watch ./Basic/**/*.ts --exec \"npm run start\"",
-    "start": "tsx watch --clear-screen=false index.ts  -r dotenv/config "
+    "start": "tsx watch --clear-screen=false -r dotenv/config index.ts "
   },
   "dependencies": {
     "@pinecone-database/pinecone": "^0.0.9",
