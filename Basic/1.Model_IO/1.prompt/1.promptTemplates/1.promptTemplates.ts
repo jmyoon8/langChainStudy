@@ -3,9 +3,9 @@ import {
   HumanMessagePromptTemplate,
   PromptTemplate,
   SystemMessagePromptTemplate,
-} from " langchain/prompts";
+} from "langchain/prompts";
 
-import { AIMessage, HumanMessage, SystemMessage } from " langchain/schema";
+import { AIMessage, HumanMessage, SystemMessage } from "langchain/schema";
 
 const formattedPromptHandler = async () => {
   const prompt =

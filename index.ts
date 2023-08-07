@@ -57,6 +57,17 @@ import {
   documentEmbeddings,
   getEmbeddings,
 } from "Basic/2.DataConnection/3.TextEmbeddingModels/1.TextEmbeddingModels";
+import {
+  createNewIndexFromLoader,
+  createNewIndexFromTexts,
+} from "Basic/2.DataConnection/4.VectorStores/1.vectorStore";
+import {
+  chainExample1,
+  chainExample2,
+  chainExample3,
+} from "Basic/3.Chains/1.Chains";
+import { debuggingChain } from "Basic/3.Chains/How-To/1.DebuggingChains";
+import { chainMemoryHandler } from "Basic/3.Chains/How-To/2.addingMemory";
 // import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
@@ -110,7 +121,12 @@ import {
 // recursiveTextSplitHandler();
 // recursiveTextSplitWithSplitDocumentHandler();
 // tokenTextSplitter();
-console.log("123123");
-console.log("123123");
-console.log(getEmbeddings, documentEmbeddings);
+// console.log(getEmbeddings, documentEmbeddings);
+// createNewIndexFromTexts();
+// createNewIndexFromLoader();
+// chainExample1();
+// chainExample2();
+// chainExample3();
+// debuggingChain();
+chainMemoryHandler();
 // watch --clear-screen=false

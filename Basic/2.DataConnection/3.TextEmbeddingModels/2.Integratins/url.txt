@@ -1,0 +1,1 @@
+https://js.langchain.com/docs/modules/data_connection/text_embedding/integrations/google_vertex_ai
