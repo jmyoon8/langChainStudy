@@ -66,13 +66,21 @@ import {
   chainExample2,
   chainExample3,
 } from "Basic/3.Chains/1.Chains";
-import { debuggingChain } from "Basic/3.Chains/How-To/1.DebuggingChains";
-import { chainMemoryHandler } from "Basic/3.Chains/How-To/2.addingMemory";
+import { debuggingChain } from "Basic/3.Chains/1.How-To/1.DebuggingChains";
 import {
   llmFoundational1,
   llmFoundational2,
   llmFoundational3,
-} from "Basic/3.Chains/Foundational/LLM";
+  llmFoundational4,
+} from "Basic/3.Chains/2.Foundational/1.LLM";
+import { chainMemoryHandler } from "Basic/3.Chains/1.How-To/2.AddingMemory";
+import {
+  Sequential,
+  SequentialChainHandler,
+} from "Basic/3.Chains/2.Foundational/2.Sequential";
+import { documentChainHandler } from "Basic/3.Chains/3.Documents/1.document";
+import { stuffDocumentHandler } from "Basic/3.Chains/3.Documents/2.Stuff";
+import { refineDocumentHenalder } from "Basic/3.Chains/3.Documents/3.refine";
 // import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
@@ -136,6 +144,10 @@ import {
 // chainMemoryHandler();
 // llmFoundational1();
 // llmFoundational2();
-llmFoundational3();
-
-// watch --clear-screen=false
+// llmFoundational3();
+// llmFoundational4();
+// Sequential();
+// SequentialChainHandler();
+// documentChainHandler();
+// stuffDocumentHandler();
+refineDocumentHenalder();
