@@ -80,7 +80,20 @@ import {
 } from "Basic/3.Chains/2.Foundational/2.Sequential";
 import { documentChainHandler } from "Basic/3.Chains/3.Documents/1.document";
 import { stuffDocumentHandler } from "Basic/3.Chains/3.Documents/2.Stuff";
-import { refineDocumentHenalder } from "Basic/3.Chains/3.Documents/3.refine";
+import {
+  promptCustomization,
+  refineDocumentHenalder,
+} from "Basic/3.Chains/3.Documents/3.refine";
+import { mapReduceChain } from "Basic/3.Chains/3.Documents/4.mapReduce";
+import { apiChainHandler } from "Basic/3.Chains/4.popular/1.APIChains";
+import {
+  customPrompts,
+  customRetrievalHandler,
+  retrievalQAHandler,
+  returnSourceDocument,
+} from "Basic/3.Chains/4.popular/2.retrievalQa";
+import { conversationalRetrievalQaWithBuiltInMemory } from "Basic/3.Chains/4.popular/3.conversationalRetrievalQa";
+import { conversationalRetievalQaStreaming } from "Basic/3.Chains/4.popular/4.streaming";
 // import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
@@ -150,4 +163,13 @@ import { refineDocumentHenalder } from "Basic/3.Chains/3.Documents/3.refine";
 // SequentialChainHandler();
 // documentChainHandler();
 // stuffDocumentHandler();
-refineDocumentHenalder();
+// refineDocumentHenalder();
+// promptCustomization();
+// mapReduceChain();
+// apiChainHandler();
+// retrievalQAHandler();
+// customRetrievalHandler();
+// customPrompts();
+// returnSourceDocument();
+// conversationalRetrievalQaWithBuiltInMemory();
+conversationalRetievalQaStreaming();
