@@ -92,8 +92,24 @@ import {
   retrievalQAHandler,
   returnSourceDocument,
 } from "Basic/3.Chains/4.popular/2.retrievalQa";
-import { conversationalRetrievalQaWithBuiltInMemory } from "Basic/3.Chains/4.popular/3.conversationalRetrievalQa";
-import { conversationalRetievalQaStreaming } from "Basic/3.Chains/4.popular/4.streaming";
+import {
+  conversationalRetievalQaStreaming,
+  conversationalRetrievalQaWithBuiltInMemory,
+  externallyManagedMemory,
+} from "Basic/3.Chains/4.popular/3.conversationalRetrievalQa";
+import {
+  openAiWithStructuredOutput,
+  openAiWithStructuredOutputAndDBRecord,
+} from "Basic/3.Chains/4.popular/4.StructuredOutputWithOpenAiFunctions";
+import { extractionChainHandler } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/1.Extraction";
+import {
+  customizationApiCall,
+  queryXKCD,
+  translationService,
+} from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/2.OpenApICalls";
+// import { intermediateSteps } from "Basic/3.Chains/4.popular/5.Summarization";
+// import { summarization } from "Basic/3.Chains/4.popular/5.Summarization";
+
 // import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
 
 // prompt templates
@@ -172,4 +188,19 @@ import { conversationalRetievalQaStreaming } from "Basic/3.Chains/4.popular/4.st
 // customPrompts();
 // returnSourceDocument();
 // conversationalRetrievalQaWithBuiltInMemory();
-conversationalRetievalQaStreaming();
+// conversationalRetievalQaStreaming();
+// externallyManagedMemory();
+// openAiWithStructuredOutput();
+// openAiWithStructuredOutputAndDBRecord();
+
+/**
+ * 이거안됨
+ // summarization();
+ // intermediateSteps();
+ */
+// await extractionChainHandler();
+// queryXKCD();
+
+// translationService();
+
+customizationApiCall();
