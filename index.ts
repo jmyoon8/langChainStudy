@@ -107,6 +107,12 @@ import {
   queryXKCD,
   translationService,
 } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/2.OpenApICalls";
+import { tagging } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/3.Tagging";
+import { morderationHandler } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/6.Moderation";
+import { multipleSelectingFromMultiplePrompts } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/7.DynamicallySelectingFromMultiplePrompts";
+import { DynamicallySelectingMultipleRetrievers } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/8.DynamicallySelectingFromMultipleRetrievers";
+// import { analyzeDocument } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/4.AnalyzeDocument";
+// import {} from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/5.SelfCritiqueChainWithConstitutionalAi";
 // import { intermediateSteps } from "Basic/3.Chains/4.popular/5.Summarization";
 // import { summarization } from "Basic/3.Chains/4.popular/5.Summarization";
 
@@ -203,4 +209,14 @@ import {
 
 // translationService();
 
-customizationApiCall();
+// customizationApiCall();
+// tagging();
+
+// 이거안됨
+// analyzeDocument();
+// 이거안됨
+// selfCiritiqueConstitutional();
+// morderationHandler();
+// multipleSelectingFromMultiplePrompts();
+
+DynamicallySelectingMultipleRetrievers();
