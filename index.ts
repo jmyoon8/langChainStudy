@@ -1,122 +1,10 @@
+import { DynamicallySelectingMultipleRetrievers } from "Basic/3.Chains/5.Additional/6.DynamicallySelectingFromMultipleRetrievers";
+import { conversationBufferMemory } from "Basic/3.Chains/6.Memory/1.How-To/1.conversationBufferMemory";
 import {
-  paritalPromptHandler1,
-  paritalPromptHandler2,
-  withFunctionsHandler1,
-  withFunctionsHandler2,
-} from "./Basic/1.Model_IO/1.prompt/1.promptTemplates/2.partialPromptTemplates";
-import {
-  formattedPromptHandler,
-  createAPromptTemplateHandler,
-  chatPromptTemplate,
-} from "Basic/1.Model_IO/1.prompt/1.promptTemplates/1.promptTemplates";
-import { compositionHandler } from "Basic/1.Model_IO/1.prompt/1.promptTemplates/3.composition";
-import { exampleSelectHandler } from "Basic/1.Model_IO/1.prompt/2.exampleSelector/1.exampleSelect";
-import { selectBySimilarityHander } from "Basic/1.Model_IO/1.prompt/2.exampleSelector/2.selectBySimilarity";
-import { llmHandler } from "Basic/1.Model_IO/2.languageModels/1.LLMs/LLMs";
-import { cancellingController } from "Basic/1.Model_IO/2.languageModels/1.LLMs/1.How-To/1.CancellingRequest";
-import { streaming } from "Basic/1.Model_IO/2.languageModels/1.LLMs/1.How-To/5.streaming";
-import { cacheHandler } from "Basic/1.Model_IO/2.languageModels/1.LLMs/1.How-To/4.cache";
-import { subscribingHadler } from "Basic/1.Model_IO/2.languageModels/1.LLMs/1.How-To/6.SubscribingToEvents";
-import { abortHandler } from "Basic/1.Model_IO/2.languageModels/2.chatModels/How-To/1.CancellingRequest";
-import { chatChain } from "Basic/1.Model_IO/2.languageModels/2.chatModels/How-To/2.LLMChainAnd3.Prompts";
-import { chatStreaming } from "Basic/1.Model_IO/2.languageModels/2.chatModels/How-To/4.Streaming";
-import {
-  parsingJsonDataHandler,
-  zodDataHandler,
-} from "Basic/1.Model_IO/3.outPutParsers/1.outPutParsers";
-import { zodDataWithLLMChainsHandler } from "Basic/1.Model_IO/3.outPutParsers/1.How-To/1.UseWithLLMChains";
-import { getCombingOutPutParseData } from "Basic/1.Model_IO/3.outPutParsers/2.CombiningOutputParsers";
-import { getListParser } from "Basic/1.Model_IO/3.outPutParsers/3.ListParser";
-import { getCutomListParser } from "Basic/1.Model_IO/3.outPutParsers/4.CustomListParser";
-import {
-  StructuredOutputParserWithJson,
-  StructuredOutputParserWithZod,
-} from "Basic/1.Model_IO/3.outPutParsers/6.StructuredOutputParser";
-import { getExampleDocs } from "Basic/2.DataConnection/1.DocumentLoaders/1.DocumentLoader";
-
-import { noSplitPdfLoaderHandler } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/6.PDF";
-import { createDoc } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/1.CreatingDocuments";
-import {
-  getExampleCsvHandler,
-  getExampleSlngleColumnCsv,
-} from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/2.Csv";
-import { fileDerectoryData } from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/4.FileDirectory";
-import {
-  jsonLoaderHandler,
-  jsonPointLoaderHandler,
-} from "Basic/2.DataConnection/1.DocumentLoaders/2.How-To/5.JSON";
-import { textSpliterOutput } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/1.SplitByCharater";
-import { codeAndMarkupHandler } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/2.SplitCodeAndMarkup";
-import { contextChunkHeadersHandler } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/3.ContextChunkheaders";
-import {
-  recursiveTextSplitHandler,
-  recursiveTextSplitWithSplitDocumentHandler,
-} from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/4.RecursivelySplitByCharacter";
-import { tokenTextSplitter } from "Basic/2.DataConnection/2.DocumentTransformers/2.TextSplitters/5.TokenTextSplitter";
-import {
-  documentEmbeddings,
-  getEmbeddings,
-} from "Basic/2.DataConnection/3.TextEmbeddingModels/1.TextEmbeddingModels";
-import {
-  createNewIndexFromLoader,
-  createNewIndexFromTexts,
-} from "Basic/2.DataConnection/4.VectorStores/1.vectorStore";
-import {
-  chainExample1,
-  chainExample2,
-  chainExample3,
-} from "Basic/3.Chains/1.Chains";
-import { debuggingChain } from "Basic/3.Chains/1.How-To/1.DebuggingChains";
-import {
-  llmFoundational1,
-  llmFoundational2,
-  llmFoundational3,
-  llmFoundational4,
-} from "Basic/3.Chains/2.Foundational/1.LLM";
-import { chainMemoryHandler } from "Basic/3.Chains/1.How-To/2.AddingMemory";
-import {
-  Sequential,
-  SequentialChainHandler,
-} from "Basic/3.Chains/2.Foundational/2.Sequential";
-import { documentChainHandler } from "Basic/3.Chains/3.Documents/1.document";
-import { stuffDocumentHandler } from "Basic/3.Chains/3.Documents/2.Stuff";
-import {
-  promptCustomization,
-  refineDocumentHenalder,
-} from "Basic/3.Chains/3.Documents/3.refine";
-import { mapReduceChain } from "Basic/3.Chains/3.Documents/4.mapReduce";
-import { apiChainHandler } from "Basic/3.Chains/4.popular/1.APIChains";
-import {
-  customPrompts,
-  customRetrievalHandler,
-  retrievalQAHandler,
-  returnSourceDocument,
-} from "Basic/3.Chains/4.popular/2.retrievalQa";
-import {
-  conversationalRetievalQaStreaming,
-  conversationalRetrievalQaWithBuiltInMemory,
-  externallyManagedMemory,
-} from "Basic/3.Chains/4.popular/3.conversationalRetrievalQa";
-import {
-  openAiWithStructuredOutput,
-  openAiWithStructuredOutputAndDBRecord,
-} from "Basic/3.Chains/4.popular/4.StructuredOutputWithOpenAiFunctions";
-import { extractionChainHandler } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/1.Extraction";
-import {
-  customizationApiCall,
-  queryXKCD,
-  translationService,
-} from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/2.OpenApICalls";
-import { tagging } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/3.Tagging";
-import { morderationHandler } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/6.Moderation";
-import { multipleSelectingFromMultiplePrompts } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/7.DynamicallySelectingFromMultiplePrompts";
-import { DynamicallySelectingMultipleRetrievers } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/8.DynamicallySelectingFromMultipleRetrievers";
-// import { analyzeDocument } from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/4.AnalyzeDocument";
-// import {} from "Basic/3.Chains/5.Additional/1.OpenAiFunctionsChains/5.SelfCritiqueChainWithConstitutionalAi";
-// import { intermediateSteps } from "Basic/3.Chains/4.popular/5.Summarization";
-// import { summarization } from "Basic/3.Chains/4.popular/5.Summarization";
-
-// import { htmlToText } from "Basic/2.DataConnection/2.DocumentTransformers/1.Integrations/1.htmlToText";
+  chatHistoryHandler,
+  memoryChainHandler,
+  pastHistoryHandler,
+} from "Basic/3.Chains/6.Memory/Memory";
 
 // prompt templates
 // createAPromptTemplateHandler();
@@ -219,4 +107,8 @@ import { DynamicallySelectingMultipleRetrievers } from "Basic/3.Chains/5.Additio
 // morderationHandler();
 // multipleSelectingFromMultiplePrompts();
 
-DynamicallySelectingMultipleRetrievers();
+// DynamicallySelectingMultipleRetrievers();
+// chatHistoryHandler();
+// pastHistoryHandler();
+// memoryChainHandler();
+conversationBufferMemory();
